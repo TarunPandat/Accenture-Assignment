@@ -3,7 +3,7 @@ import React from 'react'
 import styles from '../../../styles'
 import Job from './Job'
 
-const JObDetails = ({ job }) => {
+const JobDetails = ({ job }) => {
     return (
         <View>
             <Job
@@ -20,4 +20,4 @@ const JObDetails = ({ job }) => {
     )
 }
 
-export default JObDetails
+export default JobDetails

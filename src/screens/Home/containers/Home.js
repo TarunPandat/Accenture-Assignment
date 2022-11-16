@@ -4,7 +4,7 @@ import GestureModal from '../../../components/GestureModal'
 import styles from '../../../styles'
 import jobs from '../../../constants/Jobs'
 import Job from '../components/Job'
-import JObDetails from '../components/JobDetails'
+import JobDetails from '../components/JobDetails'
 import SearchBar from '../components/SearchBar'
 import FuzzySearch from 'fuzzy-search'
 
@@ -49,7 +49,7 @@ const Home = () => {
 
             {modal.visible ? (
                 <GestureModal visible={modal}>
-                    <JObDetails job={modal?.data} />
+                    <JobDetails job={modal?.data} />
                 </GestureModal>
             ) : null}
         </View>
