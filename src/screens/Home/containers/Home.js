@@ -1,20 +1,40 @@
-import { View, Text, Button, FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
 import React from 'react'
 import GestureModal from '../../../components/GestureModal'
 import styles from '../../../styles'
 import jobs from '../../../constants/Jobs'
 import Job from '../components/Job'
-import JobDescription from '../components/JobDetails'
 import JObDetails from '../components/JobDetails'
+import SearchBar from '../components/SearchBar'
+import FuzzySearch from 'fuzzy-search'
 
 const Home = () => {
     const [modal, setModal] = React.useState({ data: null, visible: false })
+    const [search, setSearch] = React.useState('')
+
+    const searchData = new FuzzySearch(
+        jobs,
+        ['jobId', 'jobTitle', 'jobLocation'],
+        {
+            caseSensitive: false,
+        }
+    )
+
+    const searchJobs = searchData.search(search)
 
     return (
         <View style={styles.container}>
+            <SearchBar
+                value={search}
+                onChange={(value) => {
+                    setModal({ ...modal, visible: false })
+                    setSearch(value)
+                }}
+                placeholder="Search Jobs"
+            />
             <FlatList
                 style={[styles.container, styles.jobWrapper]}
-                data={jobs}
+                data={searchJobs}
                 keyExtractor={(item) => `${item.jobId}`}
                 renderItem={({ item }) => (
                     <Job

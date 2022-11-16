@@ -1,6 +1,5 @@
 import {
     View,
-    Text,
     StyleSheet,
     TouchableOpacity,
     Dimensions,
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         borderColor: colors.gray,
         position: 'absolute',
-        width
+        width,
     },
     modalHeader: {
         width: '100%',

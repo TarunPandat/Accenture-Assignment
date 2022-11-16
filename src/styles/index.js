@@ -21,6 +21,17 @@ const styles = StyleSheet.create({
     jobDesContainer: {
         margin: 20,
     },
+    searchBarWrapper: {
+        padding: 10,
+    },
+    searchBar: {
+        borderWidth: 0.5,
+        padding: 10,
+        borderColor: colors.gray,
+        borderRadius: 10,
+        fontSize: 16,
+        color: colors.gray,
+    },
 })
 
 export default styles
